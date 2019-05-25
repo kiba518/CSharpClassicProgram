@@ -1,0 +1,57 @@
+using System;
+class Rectangle
+{
+	private float length=1.0f;
+	private float width=1.0f;
+
+	public float SetLength(float length)
+	{
+		this.length=length;
+		if((length<0.0f)||(length>2.0f))
+		{
+			Console.WriteLine ("³¤µÄÈ¡Öµ·¶Î§Ó¦ÔÚ1.0-2.0Ö®ÄÚ£¬ÇëÖØĞÂÉèÖµ¡£");
+			return 0.0f;
+		}
+		return width;
+	}
+	public float SetWidth(float width)
+	{
+        this.width=width;
+		if((width<0.0f)||(width>2.0f))
+		{
+			Console.WriteLine ("¿íµÄÈ¡Öµ·¶Î§Ó¦ÔÚ1.0-2.0Ö®ÄÚ£¬ÇëÖØĞÂÉèÖµ¡£");	
+			return 0.0f;
+		}
+		return width;
+	}
+	public float GetLength(float length)
+	{
+		return length;
+	}
+	public float GetWidth(float width)
+	{
+		return width;  
+	}
+	public float perimeter()
+	{
+		return length*2+width*2;
+	}
+	public float area()
+	{
+	   return length*width;
+	}
+
+}
+class Rectangle_Test
+{
+	public static void Main()
+	{
+		Rectangle r1=new Rectangle ();
+		r1.SetLength (1.8f);
+		r1.SetWidth (1.2f);
+	    Console.WriteLine (r1.perimeter ());
+		Console.WriteLine (r1.area ());
+
+	}
+
+}ÿÿÿ

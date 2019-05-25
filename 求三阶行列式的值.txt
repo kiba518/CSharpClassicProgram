@@ -1,0 +1,28 @@
+using System;
+class Test
+{
+	public static void Main()
+	{
+		Console.WriteLine ("该程序将求出三阶行列式的值:");
+		int[,] A=new int [3,3];
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				Console.WriteLine ("请输入第{0}行第{1}列的值:",i+1,j+1);
+				A[i,j]=int.Parse (Console.ReadLine ());
+			}
+		}
+		Console.WriteLine ("你输入的行列式为:");
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				Console.Write(A[i,j]+"\t");
+			}
+			Console.WriteLine ();
+		}
+		int result=A[0,0]*A[1,1]*A[2,2]+A[0,1]*A[1,2]*A[2,0]+A[1,0]*A[2,1]*A[0,2]-A[2,0]*A[1,1]*A[0,2]-A[1,0]*A[0,1]*A[2,2]-A[2,1]*A[1,2]*A[0,0];
+		Console.WriteLine ("该三行列式的值是:"+result);
+	}
+}

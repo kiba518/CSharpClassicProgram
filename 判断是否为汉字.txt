@@ -1,0 +1,15 @@
+public bool IsChina(string CString)
+{
+   bool BoolValue=false;
+   for (int i=0; i<CString.Length; i++)
+   {
+      if(Convert.ToInt32(Convert.ToChar(CString.Substring(i,1)))<Convert.ToInt32(Convert.ToChar(128)))
+          BoolValue = false;
+      }
+      else
+      {
+          BoolValue = true;
+      }
+    }
+    return BoolValue;
+}

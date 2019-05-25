@@ -1,0 +1,21 @@
+using System;
+class Poem
+{
+	public static string[] adjective=new string [8]{"美丽的","高兴的","伤心的","失落的","可爱的","调皮的","活波的","笨拙的"};
+	public static string[] subject=new string [8]{"太阳","花朵","星星","月亮","女孩","小猫","蝴蝶","燕子"};
+	public static string[] predicate=new string [7]{"思索着","追赶着","想念着","渴望着","怒视着","奔跑着","狂喊着"};
+	public static void Main()
+	{
+		string next;
+		do
+		{
+			Random r=new Random ();
+			for(int i=1;i<=2;i++)
+			{
+				Console.WriteLine (adjective[r.Next (adjective.Length )]+""+subject[r.Next (subject.Length )]+""+predicate[r.Next (predicate.Length )]+""+subject[r.Next (subject.Length )]);
+			}
+			Console.WriteLine ("你还想看吗?y/n");
+			next=Console.ReadLine ();
+		}while(next.ToUpper ()!="N");
+	} 
+}

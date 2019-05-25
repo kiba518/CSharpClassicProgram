@@ -1,0 +1,30 @@
+using System;
+class Score
+{
+	public void score(int sequence_number)
+	{
+		int sum=0;
+		int[] student=new int [5];
+		for(int i=0;i<=4;i++)
+		{
+			Console.WriteLine ("请输入第{0}个学生的第{1}门功课:",sequence_number,i+1);
+			student[i]=int.Parse (Console.ReadLine ());
+		}
+		for(int index=0;index!=student.Length;index++)
+		{
+			sum+=student[index];
+		}
+		Console.WriteLine ("该生的平均成绩为"+sum/5);
+	}
+}
+class Average
+{
+	public static void Main()
+	{
+		for(int i=1;i<=5;i++)
+		{
+			Score s=new Score ();
+			s.score (i);
+		}
+	}
+}

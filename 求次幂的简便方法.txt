@@ -1,0 +1,22 @@
+using System;
+class My
+{
+static void Main()
+{
+Pow r=new Pow ();
+  System.Threading .Thread.Sleep (10000);
+}
+}
+class Pow
+{
+public Pow()
+{
+  Console.WriteLine("请输入你要求幂的数：");
+  int x=int.Parse (Console.ReadLine());
+  Console.WriteLine ("数的幂是：");
+  int y=int.Parse (Console.ReadLine ());
+  int p=(int)Math.Pow (x,y);
+  Console.WriteLine ("数"+x+"的"+y+"次方是"+p);
+
+}
+}

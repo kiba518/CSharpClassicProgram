@@ -1,0 +1,18 @@
+using System;
+class My
+{
+	static void Main()
+	{
+		int a,b=1;
+		int n;
+		Console.WriteLine("请输入所要求这个数的次方数:");
+		n=int.Parse(Console.ReadLine());//n是次方
+		Console.WriteLine("请输入所要计算的这个数:");
+		a=int.Parse(Console.ReadLine());//a是那个数
+		for(int i=1;i<=n;i++)
+		{
+			b=b*a;
+		}
+		Console.WriteLine(a+"的"+n+"次方是："+b);
+	}
+}

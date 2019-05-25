@@ -1,0 +1,59 @@
+using System;
+class fangcheng
+{
+	public static void Main()
+	{
+		//声名变量
+		double a;
+		double b;
+		double c;
+		double d;
+		double e;
+		double f;
+		double g;
+		double h;
+		double i;
+		double j;
+		double k;
+		Console.WriteLine("解一元二次方程");
+		//输入a的值
+		aa: Console.WriteLine("请输入a的值:");
+		a=double.Parse(Console.ReadLine());
+		//a的值不能为0
+		if(a==0)
+		{
+			Console.WriteLine("请注意a的值不能为0,请重新输入!");
+			//返回，重新输入
+			goto aa;
+		}
+		//输入b的值
+		Console.WriteLine("请输入b的值:");
+		b=double.Parse(Console.ReadLine());
+		//输入c的值
+		Console.WriteLine("请输入c的值:");
+		c=double.Parse(Console.ReadLine());
+		//一元二次方程的计算公式
+		d=b*b;
+		e=4*a*c;
+		f=d-e;
+		g=(int)(Math.Sqrt(f));
+		i=-b+g;
+		j=-b-g;
+		h=i/(2*a);
+		k=j/(2*a);
+		//判断其根的状况
+		if(f==0)
+		{
+			Console.WriteLine("此方程有一根为:"+h);
+		}
+		else if(f>0)
+		{
+			Console.WriteLine("此方程有二根为:"+h);
+			Console.WriteLine("               "+k);
+		}
+		else 
+		{
+			Console.WriteLine("此方程没有根");
+		}
+	}
+} 

@@ -1,0 +1,37 @@
+using System;
+using System.Threading;
+
+class My303
+{
+	static void Main()
+	{
+		Console.WriteLine("请输入四位整数：");
+		int i=int.Parse(Console.ReadLine());
+
+		int first = i/1000;
+		int second = (i/100)%10;
+		int third = (i/10)%10;
+		int forth = i%10;
+
+		Console.WriteLine(first+" "+second+" "+third+" "+forth);
+
+		first = (first+7)%10;
+		second =(second+7)%10;
+		third = (third+7)%10;
+		forth = (forth+7)%10;
+
+		int temp=third;
+		third=first ;
+		first = temp;
+
+		temp= forth;
+		forth= second;
+		second = temp;
+
+		int pass = first*1000+second*100+third*10+forth;
+
+		Console.WriteLine("Now is "+pass);
+
+		Thread.Sleep(5000);
+	}
+}

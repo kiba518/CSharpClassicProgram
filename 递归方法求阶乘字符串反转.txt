@@ -1,0 +1,30 @@
+using System;
+class UsingRecursive
+{
+	static void Main()
+	{
+		int intResult;
+		string strResult;
+		UsingRecursive myURec=new UsingRecursive ();
+		intResult=myURec.DoFactorial (10);
+		Console.WriteLine ("10的阶乘是:"+intResult);
+		strResult=myURec.DoStrRev ("This is a test string.");
+		Console.WriteLine ("字符串反转后为:"+"\n"+strResult);
+	}
+	int DoFactorial(int pF)
+	{
+		int result=0;
+		if(pF==1)
+			return 1;
+		result=DoFactorial(pF-1)*pF;
+		return result;
+	}
+	string DoStrRev(string strTest)
+	{
+		if(strTest.Length==1)
+			return strTest;
+		string strResult=strTest.Substring (strTest.Length-1,1);
+		strResult+=DoStrRev(strTest.Substring (0,strTest.Length-1));
+		return strResult;
+	}
+}

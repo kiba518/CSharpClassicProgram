@@ -1,0 +1,31 @@
+using System;
+using System.Collections;
+class Sum_Average
+{
+	public static void Main()
+	{
+		int sum=0;
+		float average=0.0f;
+		Random r=new Random ();
+		ArrayList myArrayList=new ArrayList ();
+		Console.WriteLine ("你想算几个数的和,并求它的平均值:");
+		int iMax=int.Parse (Console.ReadLine ());
+		for(int i=0;i<iMax;i++)
+		{
+			myArrayList.Add (r.Next (0,100));
+		}
+		Console.WriteLine ("这{0}个数是:",iMax);
+		foreach(int pins in myArrayList)
+		{
+			Console.WriteLine (pins);
+		}
+		for(int j=0;j<iMax;j++)
+		{
+			sum+=(int)myArrayList[j];
+		}
+		Console.WriteLine ("这{0}个数的和是:{1}",iMax,sum);
+		average = (float)sum / iMax;
+		Console.WriteLine ("这{0}个数的平均值是:{1}",iMax,average);
+
+	}
+}

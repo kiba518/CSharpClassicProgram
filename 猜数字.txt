@@ -1,0 +1,39 @@
+using System;
+namespace _02_26
+{
+	class Class_02_26
+	{
+		public static void Main()
+		{
+			string sTemp;
+			int iNum=new Random ().Next ()%100;
+			int iGuess=0,iCount=0;
+			Console.WriteLine ("请猜猜我想到的一到一百之间的数字.");
+do
+{
+	sTemp=Console.ReadLine ();
+	try
+	{
+		iGuess=Int32.Parse (sTemp);
+		if(iGuess>iNum)
+		{
+			Console.WriteLine ("太大了.");
+		}
+		else if (iGuess<iNum)
+		{
+			Console.WriteLine ("太小了.");
+		}
+
+	}
+	catch(Exception e)
+	{
+		Console.WriteLine ("你输入的不是一个有效整数.");
+	}
+	finally
+	{
+		Console.WriteLine ("你已经猜了{0}次了.",++iCount);
+	}
+}while(iGuess!=iNum);
+		}
+	}
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Threading;
+class My302
+{
+	static void Main()
+	{
+		Console.WriteLine("Please Input the Number:");
+		int all = int.Parse(Console.ReadLine());
+		int sum=0,temp=0;
+		for (int i=1;i<=all;i++)
+		{
+			Console.Write("Please Input the NO."+i+" value:");
+			temp=int.Parse(Console.ReadLine());
+			sum+=temp;
+			
+		}
+
+		Thread.Sleep(1000);
+
+		Console.WriteLine("The all is "+sum);
+
+		Thread.Sleep(5000);
+
+	}
+}

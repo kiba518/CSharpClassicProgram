@@ -1,0 +1,147 @@
+using System;
+public class MatrixMultiply
+{
+	public static void Main()
+	{ 
+		int a=0,b=0,c=0,d=0;//矩阵A.B的行数.列数
+		Console.WriteLine ("该程序将求出两个矩阵的积:");
+		Console.WriteLine ("请指定矩阵A的行数:");
+		int exception_number=0;
+		do
+		{
+			try
+			{ 
+				a=int.Parse(Console.ReadLine ());
+				exception_number++;
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine (e.Message );
+				Console.WriteLine ("请输入一个数字:");   
+			}
+		}while(exception_number==0);
+		Console.WriteLine ("请指定矩阵A的列数:");
+		do
+		{
+			try
+			{
+				b=int.Parse (Console.ReadLine ());
+				exception_number++;
+			}
+			catch(FormatException e)
+			{
+				Console.WriteLine (e.Message );
+				Console.WriteLine ("请输入一个数字:");
+			}
+		}while(exception_number==0);
+		int[,] MatrixA=new int [a,b];
+		for(int i=0;i<a;i++)
+		{
+			for(int j=0;j<b;j++)
+			{
+				exception_number=0;
+				do
+				{
+					Console.WriteLine ("请输入矩阵A第{0}行第{1}列的值:",i+1,j+1);
+					try
+					{
+						MatrixA[i,j]=int.Parse (Console.ReadLine ());
+						exception_number++;
+					}
+					catch(Exception e)
+					{
+						Console.WriteLine (e.Message );
+						Console.WriteLine ("请输入一个数字:");
+					}
+				}while(exception_number==0);
+			}
+		}
+		Console.WriteLine ("矩阵A输入完毕.");
+		Console.WriteLine ("请指定矩阵B的行数:");
+		do
+		{
+			try
+			{
+				c=int.Parse (Console.ReadLine ());
+				exception_number++;
+			}
+			catch(FormatException e)
+			{
+				Console.WriteLine (e.Message );
+				Console.WriteLine ("请输入一个数字:");
+			}
+		}while(exception_number==0);
+		Console.WriteLine ("请指定矩阵B的列数:");
+		do
+		{
+			try
+			{
+				d=int.Parse (Console.ReadLine ());
+			}
+			catch(FormatException e)
+			{
+				Console.WriteLine (e.Message );
+				Console.WriteLine ("请输入一个数字:");
+			}
+		}while(exception_number==0);
+		int[,] MatrixB=new int [c,d];
+		for(int i=0;i<c;i++)
+		{
+			for(int j=0;j<d;j++)
+			{
+				exception_number=0;
+				do
+				{
+					Console.WriteLine ("请输入矩阵A第{0}行第{1}列的值:",i+1,j+1);
+					try
+					{
+						MatrixB[i,j]=int.Parse (Console.ReadLine ());
+					}
+					catch(Exception e)
+					{
+						Console.WriteLine (e.Message );
+						Console.WriteLine ("请输入一个数字:");
+					}
+				}while(exception_number==0);
+			}
+		}
+		Console.WriteLine ("矩阵B输入完毕.");
+		Console.WriteLine ("矩阵A为:");
+		outputMatrix(MatrixA,a,b);
+		Console.WriteLine ("矩阵B为:");
+		outputMatrix(MatrixB,c,d);
+		if(b!=c)
+		{
+			Console.WriteLine ("矩阵A的列数与矩阵B的行数不相等,无法进行乘积运算!");
+			return;
+		}
+		else
+		{
+			Console.WriteLine ("矩阵A与矩阵B的乘积为:");
+		}
+		int[,] MatrixC=new int [a,d];
+		for(int i = 0; i < a; i++)
+		{
+			for(int j = 0; j < d; j++)
+			{
+				MatrixC[i,j] = 0;
+				for(int k = 0; k < b; k++)
+				{
+					MatrixC[i,j] += MatrixA[i,k] * MatrixB[k,j];
+				}
+			}
+		}
+		outputMatrix(MatrixC,a,d);
+	}
+	private static void outputMatrix(int[,] MatrixX, int rowCount, int columnCount)
+	{
+		for(int i = 0; i < rowCount; i++)
+		{ 
+			for(int j = 0; j < columnCount; j++)
+			{
+				Console.Write(MatrixX[i,j] + "\t");
+			}
+			Console.WriteLine();
+		}
+	}
+}

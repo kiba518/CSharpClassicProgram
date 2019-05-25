@@ -1,0 +1,49 @@
+using System;
+public class Test
+{
+	public static void Main()
+	{
+		//不知道怎么搞的,两个不能同进用,想不明白,可能是前一种方法已经把值给改变了
+		int x;
+		int temp;
+		Console.WriteLine ("你想排几个数的序:");
+		x=int.Parse (Console.ReadLine ());
+		int[] array_previous=new int [x];
+		for(int i=0;i<array_previous.Length;i++)
+		{
+			Console.WriteLine ("请输入第{0}个数:",i+1);
+			array_previous[i]=int.Parse (Console.ReadLine ());
+		}
+		for(int index=1;index<array_previous.Length;index++)
+		{
+			 
+			if(array_previous[index-1]<array_previous[index])
+			{
+				temp=array_previous[index-1];
+				array_previous[index-1]=array_previous[index];
+				array_previous[index]=temp;
+			}
+		}
+		Console.WriteLine ("正序排列为:");
+		foreach(int pin in array_previous)
+		{
+			Console.Write (pin+"\t");
+		}
+		Console.WriteLine (); 
+	    for(int index=1;index<array_previous.Length;index++)
+		{
+			if(array_previous[index-1]>array_previous[index])
+			{
+				temp=array_previous[index-1];
+				array_previous[index-1]=array_previous[index];
+				array_previous[index]=temp;
+			}
+		}
+		Console.WriteLine ("反序排列为:");
+		foreach(int pin in array_previous)
+		{
+			Console.Write (pin+"\t");
+		}
+		Console.WriteLine (); 
+	} 
+}

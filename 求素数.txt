@@ -1,0 +1,39 @@
+using System;
+namespace Other_Features
+{
+	public class Prime
+	{
+		public int number;
+		public Prime(int n)
+		{
+			if(isPrime(n))
+				this.number=n;
+			else
+				throw new Exception (n+" is not a prime.");
+		}
+		public static Prime operator ++ (Prime orig)
+		{
+			bool succeeded =false;
+			while(!succeeded)
+								succeeded=isPrime(++orig.number );
+			return orig;
+		}
+		public static bool isPrime(int number)
+		{
+			int max=(int)(number/2+1);
+			for(int i=2;i<max;++i)
+				if(number%i==0)
+					return false;
+			return true;
+		}
+		public static void Main()
+		{
+			Prime p=new Prime (1);
+			for(int i=0;i<100;++i)
+			{
+				Console.WriteLine (p.number);
+				++p;
+			}
+		}
+	}
+}

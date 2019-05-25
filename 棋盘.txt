@@ -1,0 +1,40 @@
+using System;
+class ChessBoard
+{
+	public char[,] SquareColor=new char [8,8];
+	public ChessBoard()
+	{
+		for(int i=0;i<SquareColor.GetLength (0);i++)
+		{
+			for(int x=0;x<SquareColor.GetLength (1);x++)
+			{
+				if((x%2)==0)
+					if((i%2)==0)
+						SquareColor[i,x]='W';
+				else
+						SquareColor[i,x]='B';
+				else
+					if((i%2)==0)
+					SquareColor[i,x]='B';
+				else
+					SquareColor[i,x]='W';
+			}
+		}
+	}
+	void DrawBoard()
+	{
+		for(int i=0;i<SquareColor.GetLength (0);i++)
+		{
+			for(int x=0;x<SquareColor.GetLength (1);x++)
+			{
+				Console.Write (SquareColor[i,x]);
+			}
+			Console.WriteLine();
+		}
+	}
+	static void Main()
+	{
+		ChessBoard MyChessBoard=new ChessBoard ();
+		MyChessBoard.DrawBoard ();
+	}
+}

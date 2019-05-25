@@ -1,0 +1,36 @@
+using System;
+class ggg
+{
+	static void Main()
+	{
+		Console.WriteLine("请你输入十进制，我为你转换成二进制，谢谢使用。");
+		int a,b,d,f;
+		int c=0;
+		a=int.Parse(Console.ReadLine());
+		b=a;
+		do
+		{
+   
+			b/=2;
+			c=++c;
+		}
+		while(b!=1);
+		d=c+1;
+		f=c;
+		int[] A=new int[d];
+		for(int i=c;i>0;i--)
+		{
+			A[i]=(int)a%2;
+			a/=2;
+   
+		}
+		A[0]=1;
+		for(int j=0;j<=f;j++)
+		{
+			Console.Write(A[j]);
+   
+		}
+		Console.WriteLine("\n"+"欢迎 使用，谢谢退出！");
+		System.Threading.Thread.Sleep(3000);
+	}
+}

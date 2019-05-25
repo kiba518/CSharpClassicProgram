@@ -1,0 +1,16 @@
+using System;
+using System.Diagnostics;
+class close_special_exe
+{
+	static void Main()
+	{
+		Process[] myProcess;
+		myProcess=Process.GetProcessesByName ("Notepad");
+		foreach(Process instance in myProcess)
+		{
+		
+			instance.WaitForExit (3000);
+			instance.CloseMainWindow ();
+		}
+	}
+}

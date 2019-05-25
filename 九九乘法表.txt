@@ -1,0 +1,16 @@
+using System;
+public class ChengFaBiao
+{
+	public static void Main()
+	{
+		Console.WriteLine ("jiu jiu cheng fa biao");
+		for(int x=1;x<=9;x++)
+		{
+			for(int y=1;y<=x;y++)
+			{
+				Console.Write ("{0}*{1}={2}\t",x,y,x*y);
+			}
+			Console.WriteLine ();
+		}
+	}
+}

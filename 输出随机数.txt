@@ -1,0 +1,27 @@
+using System;
+namespace StaticConstructor
+{
+	class RandomNumberGenerator
+	{
+	private static Random randomNumber;
+		static RandomNumberGenerator()
+		{
+		randomNumber=new Random ();
+		}
+		public int Next()
+		{
+		return randomNumber.Next ();
+		}
+	}
+	class Class1
+	{
+		static void Main(string[] args)
+		{
+		RandomNumberGenerator g1=new RandomNumberGenerator ();
+			for(int i=0;i<10;i++)
+			{
+			Console.WriteLine (g1.Next ());
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+using System;
+using System.Collections ;
+class ArraySort
+{
+	static void Main()
+	{
+		ArrayList myArrayList=new ArrayList ();
+		Console.WriteLine ("你想排几个数的序:");
+		int iNumber=int.Parse (Console.ReadLine ());
+		for(int i=1;i<=iNumber;i++)
+		{
+			Console.WriteLine ("请输入第{0}个数:",i);
+			int temp=int.Parse (Console.ReadLine ());
+			myArrayList.Add (temp);
+		}
+		Console.WriteLine ("\n排序前的内容:");
+		ArraySort myArraySort=new ArraySort ();
+		myArraySort.WriteList (myArrayList);
+		myArrayList.Sort ();
+		Console.WriteLine ("\n逆序后的内容:");
+		myArraySort.WriteList (myArrayList);
+		myArrayList.Reverse ();
+		Console.WriteLine ("\n正序后的内容:");
+		myArraySort.WriteList (myArrayList);
+	}
+	void WriteList(ArrayList myArrayList)
+	{
+		Console.WriteLine ();
+		int pSize=myArrayList.Count;
+		for(int i=0;i<pSize;i++)
+		{
+			Console.Write (myArrayList[i]+"\t");
+		}
+		Console.WriteLine ();
+	}
+}

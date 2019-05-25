@@ -1,0 +1,42 @@
+using System;
+class ChooseSubject
+{
+	static void Main()
+	{
+		int i;
+		string str;
+		Console.WriteLine ("Please choose your favorite subjects:-1 is quit.");
+		Console.WriteLine ("1.Chinese.");
+		Console.WriteLine ("2.Maths.");
+		Console.WriteLine ("3.English.");
+		Console.WriteLine ("4.Physical.");
+		Console.WriteLine ("-1 is quit.");
+		do
+		{
+			str=Console.ReadLine ();
+			i=Int32.Parse (str);
+			switch(i)
+			{
+				case 1:
+					Console.WriteLine ("You like chinese very much.");
+					break;
+				case 2:
+					Console.WriteLine ("You like maths very much.");
+					break;
+				case 3:
+					Console.WriteLine ("You like english very much.");
+					break;
+				case 4:
+					Console.WriteLine ("You like physical very much.");
+					break;
+				case -1:
+					break;
+				default:
+					Console.WriteLine ("I'm sorry.You can't choose this subject.");
+					break;
+			}
+	
+		}while(i!=-1);
+		Console.WriteLine ("Byebye!");
+	}
+}

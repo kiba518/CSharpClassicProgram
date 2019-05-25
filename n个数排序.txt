@@ -1,0 +1,40 @@
+using System;
+
+namespace n个数排序
+{
+
+class Class1
+{
+  
+  static void Main(string[] args)
+  {Console.WriteLine("请输入你要排几个数的顺序:\n");
+   int n;//接收你要几个数排序
+   n=int.Parse(Console.ReadLine());
+   int[] A=new int[n];
+   Console.WriteLine("请依次输入你要排序的数(数的结束用回车表示):\n");
+   for(int i=0;i<n;i++)//接收你要排序的数
+    A[i]=int.Parse(Console.ReadLine());
+   for(int i=0;i<n;i++)//排序
+   {
+    for(int j=i+1;j<n;j++)
+    {
+     int temp;
+     if(A[i]>A[j])
+     {
+      temp=A[j];
+      A[j]=A[i];
+      A[i]=temp;
+     }
+    }
+   }
+   Console.WriteLine("排序的结果为:\n");
+   for(int i=0;i<n;i++)
+    Console.Write("  "+A[i]);
+
+  System.Threading.Thread.Sleep(10000);
+  }
+}
+}
+
+
+s

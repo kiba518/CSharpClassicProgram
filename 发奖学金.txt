@@ -1,0 +1,106 @@
+ using System;
+ public class student
+ {
+	 protected string name;
+	 protected int age;
+	 protected decimal score;
+	 public student(string name,int age,decimal score)
+	 {
+		 this.name=name;
+		 this.age=age;
+		 this.score=score;
+	 }
+	 public virtual string Name
+	 {
+		 get
+		 {
+			return name;
+		 }
+		 set
+		 {
+			name=value;
+		 }
+	 }
+	 public virtual int Age
+	 {
+		 get
+		 {
+			 return age;
+		 }
+		 set
+		 {
+			age=value;
+		 }
+	 }
+	 public virtual decimal Socore
+	 {
+		 get
+		 {
+			return score;
+		 }
+		 set
+		 {
+			score=value;
+		 }
+	 }
+ }
+ public class good_student:student
+ {
+	 public decimal bursary=0.0m;
+	 public  good_student(string g_name,int g_age,decimal g_score,decimal g_bursary):base(g_name,g_age,g_score)
+	 {
+		  this.bursary =bursary;
+	 }
+	 public override string Name
+	 {
+		 get
+		 {
+			 return name;
+		 }
+		 set
+		 {
+			 name = value;
+		 }
+	 }
+	 public override int Age
+	 {
+		 get
+		 {
+			 return age;
+		 }
+		 set
+		 {
+			 age = value;
+		 }
+	 }
+	 public override decimal Socore
+	 {
+		 get
+		 {
+			 if(score>80.0m)
+			 {
+				bursary+=1200.0m;
+			 }
+			 else
+			 {
+				bursary=0.0m;
+			 }
+			return score;
+		 }
+		 set
+		 {
+			 score = value;
+		 }
+	 }
+ }
+ public class MainClass
+ {
+	 public static void Main()
+	 {
+		 student s=new student ("大明",23,32.0m);
+		 Console.WriteLine ("\t{0},\t{1},\t{2}",s.Name ,s.Age ,s.Socore );
+		 good_student gs=new good_student ("小明",32,89.0m,0);
+		 Console.WriteLine ("\t{0},\t{1},\t{2},\t{3}",gs.Name,gs.Age ,gs.Socore,gs.bursary );
+	 }
+
+ }

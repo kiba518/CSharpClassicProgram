@@ -1,0 +1,26 @@
+using System; 
+class Class1
+{	
+public static int x;	
+public static int y;	
+public static long temp=0;	
+public static long sum=0;	
+public static void Main()	
+{		
+Console.WriteLine ("请输入所要求这一系列数的和的个数:");		
+x=int.Parse (Console.ReadLine ());		
+Console.WriteLine ("请输入这一系列数的基数:");		
+y=int.Parse (Console.ReadLine ());		
+for(int i=1;i<=x;i++)		
+{			
+int temp=y;							
+for(int j=1;j<i;j++)			
+{							
+temp=temp*10+y;			
+}			
+sum+=temp;		
+}		
+Console.WriteLine (sum);		
+Console.Read();	
+}
+}   

@@ -1,0 +1,37 @@
+using System;
+public class Square 
+{
+private int sidelong;
+	public Square()
+	{
+	Console.WriteLine ("我没有参数.");
+	}
+	public Square(int sidelong)
+	{
+	this.sidelong=sidelong;
+	}
+	public int Setsidelong(int sidelong)
+	{
+	    this.sidelong=sidelong;
+		return sidelong;
+	}
+	public int Getsidelong(int sidelong)
+	{
+	return sidelong;
+	}
+	public void Print()
+	{
+	Console.WriteLine ("当前正方形的边长是：{0}",sidelong);
+	}
+
+}
+class Square_Test
+{
+	public static void Main()
+	{
+	Square s1=new Square ();
+		s1.Setsidelong (4);
+		s1.Print ();
+		Square s2=new Square ();
+	}
+}

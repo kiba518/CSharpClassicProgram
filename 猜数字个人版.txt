@@ -1,0 +1,37 @@
+using System;
+public class guess_number
+{
+	
+	public static void Main()
+	{
+		int i_random=new Random ().Next (100);
+		int i_guess=0;
+		int i_count=0;
+		Console.WriteLine ("猜一猜这样一个随机数,它的范围是在零到一百之间.");
+		for(i_count=0;i_count<10;i_count++)
+		{
+			i_guess=int.Parse (Console.ReadLine ());
+			if(i_guess<i_random)
+			{
+				Console.WriteLine ("太小了,大一点儿好些.");
+			}
+			if(i_guess>i_random)
+			{
+				Console.WriteLine ("太大了,小一些儿好些.");
+			} 
+		} 
+		if(i_guess==i_random&&i_count!=10)
+		{
+			Console.WriteLine ("不错,不错,猜对了!");
+		}
+		else if(i_guess==i_random&&i_count==10)
+		{
+			Console.WriteLine ("在这功败垂成的时候,你猜对了,更加幸运!");
+		}
+		else if(i_count==10&&i_guess!=i_random)
+		{
+			Console.WriteLine ("对不起,你已经猜了十次,不能再猜了.");
+		} 
+		Console.WriteLine (i_random);
+	}
+}

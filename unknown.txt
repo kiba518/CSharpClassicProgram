@@ -1,0 +1,61 @@
+using System;
+namespace dirtysalt
+{
+	public class Car//class of car,has attribute of 'weight' and 'speed'
+	{
+		private int weight;
+		private int speed;
+		public Car(int Weight,int Speed)
+		{
+			weight=Weight;
+			speed=Speed;
+		}
+		public void setweight(int Weight)
+		{
+			weight=Weight;
+		}
+		public void setspeed(int Speed)
+		{
+			speed=Speed;
+		}
+		public int getspeed()
+		{
+			return speed;
+		}
+		public int getweight()
+		{
+			return weight;
+		}
+	};
+
+
+	public class Sportcar:Car//inherit class of Car,has  attributes of 'weight','speed','color'
+	{
+		private string color;
+		public  Sportcar(int Weight,int Speed,string Color):base(Weight,Speed)
+		{
+			setweight(Weight);
+			setspeed(Speed);
+			color=Color;
+		}
+		public void setcolor(string Color)
+		{
+			color=Color;
+		}
+		public string getcolor()
+		{
+			return color;
+		}
+		public static void Main()
+		{
+			Car car=new Car(100,100);
+			Sportcar sportcar=new Sportcar(100,200,"blcak");//here has a problem
+			Console.WriteLine("car's weight is "+car.getweight());
+			Console.WriteLine("car's speed is "+car.getspeed());
+			Console.WriteLine("sportcar's weight is "+sportcar.getweight());
+			Console.WriteLine("sportcar's speed is "+sportcar.getspeed());
+			Console.WriteLine("sportcar's speed is "+sportcar.getcolor());
+		}
+	}
+}
+

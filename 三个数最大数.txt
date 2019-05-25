@@ -1,0 +1,35 @@
+using System;
+public class Test
+{
+	public static void Main()
+	{
+		int x;
+		int y;
+		int z;
+		Console.WriteLine ("请输入三个数:");
+		x=int.Parse (Console.ReadLine ());
+		y=int.Parse (Console.ReadLine ());
+		z=int.Parse (Console.ReadLine ());
+		if(x>y)
+		{
+			if(x>z)
+			{
+				Console.WriteLine (x);
+			}
+			else
+				Console.WriteLine (z);
+		}
+		else
+		{
+			if(y>z)
+			{
+				Console.WriteLine (y);
+
+			}
+			else
+			{
+				Console.WriteLine (z);
+			}
+		}
+	}
+}
